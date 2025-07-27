@@ -9,8 +9,8 @@ def get_books_by_author(author_name):
         return Book.objects.filter(author=author)
     except Author.DoesNotExist:
         return [Book.objects.none()]
-       
-    
+   
+  
         
 def get_all_books_in_library(library_name):
     """
@@ -22,12 +22,13 @@ def get_all_books_in_library(library_name):
     except Library.DoesNotExist:
         return [library.books.none()]
     
+    
 def get_librarian_for_library(library_name):
     """
     Retrieve the librarian responsible for a specific library.
     """
     try:
-        library = Library.objects.get(name=library_name)
+        library = Library.objects.get(library__name = library_name)
         return library.librarian
     except Library.DoesNotExist:
         return None
