@@ -10,7 +10,7 @@ def get_books_by_author(author_name):
     except Author.DoesNotExist:
         return [Book.objects.none()]
     
-def get_books_in_library(library_name):
+def get_all_books_in_library(library_name):
     """
     Retrieve all books available in a specific library.
     """
@@ -18,7 +18,7 @@ def get_books_in_library(library_name):
         library = Library.objects.get(name=library_name)
         return library.books.all()
     except Library.DoesNotExist:
-        return []
+        return [library.books.none()]
     
 def get_librarian_for_library(library_name):
     """
