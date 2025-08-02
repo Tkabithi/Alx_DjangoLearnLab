@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 urlpatterns = [
     path('books/', views.list_books, name='list_books'),
@@ -13,8 +14,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='relationship_app/logout.html'), name='logout'),
     path('admin-view/', views.admin_view, name='admin_view'),
     path('librarian-view/', views.librarian_view, name='librarian_view'),
-    path('member-view/', views.member_view, name='member_view'),
-    path('add_book/', add_book, name='add_book'),
-    path('edit_book/<int:pk>/', edit_book, name='edit_book')
+    path('member-view/', views.member_view, name='member_view'),    
+    
     # ... other URL patterns ...
 ]
