@@ -1,12 +1,12 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import permission_required, login_required
 from .models import Book
 
 @permission_required('bookshelf.view_book', raise_exception=True)
 @login_required
-def list_books(request):
+def book_list(request):
     books=Book.objects.all()
-    return render(request, "relationship_app/list_books.html", {'books': books})
+    return render(request, "relationship_app/book_list.html", {'books': books})
 
 @permission_required('relationship_app.can_add_book',raise_exception=True) 
 def add_book(request):
