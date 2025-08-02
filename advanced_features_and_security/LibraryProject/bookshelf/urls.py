@@ -1,5 +1,7 @@
 from django.urls import path
-from . import views
+from . import views  # Import your views
+
+app_name = 'bookshelf'  # Optional namespace
 
 urlpatterns = [
     path('', views.book_list, name='list_books'),
