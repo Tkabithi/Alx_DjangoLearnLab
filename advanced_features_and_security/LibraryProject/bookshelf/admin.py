@@ -17,4 +17,4 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = UserAdmin.add_fieldsets + (
         (None, {'fields': ('date_of_birth', 'profile_photo')}),  # Add custom fields to add form
     )
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(CustomUser)
