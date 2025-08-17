@@ -39,3 +39,4 @@ class Book(models.Model):
             ("can_edit_book", "Can edit book"),
             ("can_delete_book", "Can delete book"),
         ]
+        
