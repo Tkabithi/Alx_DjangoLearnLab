@@ -1,12 +1,12 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-{% block title %}Register{% endblock %}
+{% block title %} Create Post {% endblock %}
 
 {% block content %}
-<h2>Register</h2>
+<h1>{% if view.object %}Edit{% else %}New{% endif %} Post</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Sign Up</button>
+    <button type="submit">Save</button>
 </form>
 {% endblock %}
