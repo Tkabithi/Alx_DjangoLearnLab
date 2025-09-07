@@ -9,6 +9,10 @@
 </head>
 <body>
     <header>
+        <form method="GET" action="{% url 'search-results' %}" style="display:inline;">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
